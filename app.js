@@ -1,4 +1,5 @@
 let liste = [];
+let indexno;
 let total = 0;
 let complete = 0;
 let input = document.querySelector("#todo-input");
@@ -10,52 +11,64 @@ document.querySelector("#todo-button").onclick = () => {
   if (!input.value) {
     input.value.textContent = "Add New Todo...";
   } else if (!liste.includes(input.value)) {
-    liste.push(input.value);
+    liste.push(String(input.value));
+    console.log(liste);
     total++;
     toplam.textContent = total;
-  }
-  console.log(liste);
-  if (!yazdir.innerHTML.includes(input.value)) {
     yazdir.innerHTML =
       yazdir.innerHTML +
-      `<li> <i class="fa-solid fa-check"></i> <P> ${input.value} </P> <i class="fa-solid fa-trash"></i></li>`;
+      `<li> <i class="fa-solid fa-check"></i> <p> ${liste[String(liste.length-1)]} </p> <i class="fa-solid fa-trash"></i></li>`;
     input.value = "";
+  } else if (liste.includes(input.value)) {
+    return;
   }
   document.querySelectorAll(".fa-check").forEach(
     (a) =>
       (a.onclick = () => {
-        a.parentElement.classList.add("checked");
-        // const li = document.querySelector("li");
-        console.log(a);
+        if (a.parentElement.classList.contains("checked")) {
+          a.parentElement.classList = "";
+          complete--;
+          biten.textContent = complete;
+          total++;
+          toplam.textContent = total;
+        } else {
+          a.parentElement.classList.add("checked");
 
-        total--;
+          total--;
 
-        toplam.textContent = total;
+          toplam.textContent = total;
 
-        complete++;
-        biten.textContent = complete;
-       
-                
-
+          complete++;
+          biten.textContent = complete;
+        }
       })
-      
-
-      
   );
 
   document.querySelectorAll(".fa-trash").forEach(
     (a) =>
-      (a.onclick = () => {
+      a.onclick = () => {
+        const  eleman= a.previousElementSibling.textContent;
+        // console.log(eleman);
+        // console.log(typeof(eleman));
+         indexno= liste.indexOf(String(eleman));
+        //  console.log(liste.includes('f'));
+        //  if (eleman==='f') {
+        //   console.log('dogru')
+        //  } 
+        //  else{console.log('yanlis')} ;
+        
+        // console.log(indexno);
+        liste.splice(indexno,1);
+        console.log(liste);
         a.parentElement.remove();
-        complete--;
-        biten.textContent = complete;
+        if (a.parentElement.classList.contains("checked")) {
+          complete--;
+          biten.textContent = complete;
+        } else {
+          total--;
 
-        // liste.siplice(liste.indexOf(a), 1);
-
-        console.log(liste.indexOf(a));
-      })
+          toplam.textContent = total;
+        }
+      }
   );
-
- 
-
 };
