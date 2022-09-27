@@ -54,7 +54,7 @@ document.querySelector("#todo-button").onclick = () => {
         liste.splice(indexno, 1);
         console.log(liste);
         a.parentElement.remove();
-console.log(document.querySelectorAll(".fa-trash"));
+console.log(liste);
         total--;
         toplam.textContent = total;
 
