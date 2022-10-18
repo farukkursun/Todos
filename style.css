@@ -8,7 +8,7 @@
 
 body {
   height: 100vh;
-  background-image: linear-gradient(#a514df, #d43bc0);
+  background-image: linear-gradient(#14dfc4, #3bd4d4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@ body {
   height: 80vh;
   border-radius: 50px;
   box-shadow: 2px 2px 20px rgba(34, 24, 24, 0.911);
-  background-color: rgb(234, 193, 253);
+  background-color: rgb(193, 253, 230);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +52,7 @@ header {
 #todo-button {
   height: 3rem;
   width: 20%;
-  background-color: #5d20bf;
+  background-color: #20bf3b;
   color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
