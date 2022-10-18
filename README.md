@@ -1,12 +1,11 @@
-# Project: CalculatorMitJs
+# Projekt: Todos
 https://github.com/farukkursun/Todos
 
-## ## Project clone link
+## ## Link zum Klonen des Projekts
 https://github.com/farukkursun/Todos.git
 
 ## Beschreibung
-Ich habe den Rechner, den ich mit HTML und CSS erstellt habe, mit Java-Skript funktionsfähig gemacht.
-Ich habe in diesem Projekt Java-Script-Methoden wie foreach, onclick, addEventListener verwendet.
+Notebook wurde mit HTML, CSS und Java Script erstellt. Methoden wie Foreach und Filter werden in Java Script verwendet.
 
 
 ```
