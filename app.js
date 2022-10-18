@@ -1,6 +1,6 @@
 
 let liste = [];
-let indexno = 0;
+
 let total = 0;
 let complete = 0;
 let input = document.querySelector("#todo-input");
@@ -17,9 +17,7 @@ document.querySelector("#todo-button").onclick = () => {
     toplam.textContent = total;
     yazdir.innerHTML =
       yazdir.innerHTML +
-      `<li> <i class="fa-solid fa-check"></i> <p> ${
-        liste[liste.length - 1]
-      } </p> <i class="fa-solid fa-trash"></i></li>`;
+      `<li class ='ayse'> <i class="fa-solid fa-check"></i> <p>${input.value}</p> <i class="fa-solid fa-trash"></i></li>`;
     input.value = "";
   } else if (liste.includes(input.value)) {
     return;
@@ -43,18 +41,15 @@ document.querySelector("#todo-button").onclick = () => {
       })
   );
   document.querySelectorAll(".fa-trash").forEach(
-    (a, indexno) =>
+    (a) =>
       (a.onclick = () => {
-        // const eleman = a.previousElementSibling.textContent;
-        
-        
-        
-        // indexno = liste.indexOf(eleman);
-        
-        liste.splice(indexno, 1);
-        console.log(liste);
+       
+         liste = liste.filter(
+          (ürün) => ürün != a.closest(".ayse").querySelector("p").textContent
+        ); 
+      
         a.parentElement.remove();
-console.log(liste);
+       console.log(liste);
         total--;
         toplam.textContent = total;
 
